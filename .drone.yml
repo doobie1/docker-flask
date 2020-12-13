@@ -1,0 +1,9 @@
+kind: pipeline
+name: firstdronepipeline
+
+steps:
+- name: build python container
+  image: python:3.6
+  commands:
+  - pip install -r requirements.txt
+  - cmd app.py
