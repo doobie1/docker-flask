@@ -6,4 +6,4 @@ steps:
   image: python:3.6
   commands:
   - pip install -r requirements.txt
-  - app.py
+  - python app.py
