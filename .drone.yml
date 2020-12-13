@@ -4,7 +4,6 @@ name: firstdronepipeline
 steps:
 - name: build python container
   image: python:3.6
-  detach: true
   commands:
   - pip install -r requirements.txt
-  - python app.py
+  - python app.py &
