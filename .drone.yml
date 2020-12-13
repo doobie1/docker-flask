@@ -1,9 +1,12 @@
 kind: pipeline
-name: firstdronepipeline
+type: exec
+name: flask-docker
 
 steps:
-- name: build python container
-  image: python:3.6
+- name: flask app build
   commands:
-  - pip install -r requirements.txt
-  - python app.py &
+  - docker build -t simple-flask-app:latest .
+
+- name: docker run
+  commands:
+  -  docker run -d -p 5000:5000 simple-flask-app
